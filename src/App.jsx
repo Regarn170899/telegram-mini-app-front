@@ -24,7 +24,7 @@ function App() {
         setStatus("Отправка данных...");
 
         try {
-            const response = await fetch("http://localhost:3000/telegram/sendMessage", {
+            const response = await fetch("https://gthxys-95-72-45-141.ru.tuna.am/telegram/sendMessage", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -46,6 +46,7 @@ function App() {
             setStatus("Ошибка при отправке данных.");
         }
     };
+
 
     return (
         <div style={styles.container}>
