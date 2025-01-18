@@ -24,7 +24,7 @@ function App() {
         setStatus("Отправка данных...");
 
         try {
-            const response = await fetch("https://0k0wst-95-72-45-141.ru.tuna.am/test/log", {
+            const response = await fetch("http://localhost:5000/test/log", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
