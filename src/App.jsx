@@ -19,12 +19,11 @@ function App() {
     };
 
     // Обработчик отправки формы
-    const handleSubmit = async (e) => {
-        e.preventDefault();
+    const handleSubmit = async () => {
         setStatus("Отправка данных...");
 
         try {
-            const response = await fetch("https://vl98as-95-72-45-141.ru.tuna.am/telegram/sendMessage", {
+            const response = await fetch("http://localhost:3000/test/log", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -87,9 +86,6 @@ function App() {
                     />
                 </div>
 
-                <button type="submit" style={styles.button}>
-                    Отправить
-                </button>
             </form>
 
             {status && <p style={styles.status}>{status}</p>}
