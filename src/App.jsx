@@ -4,8 +4,8 @@ function App() {
     const [userData, setUserData] = useState(null);
 
     useEffect(() => {
-        if (window.Telegram.WebApp.initDataUnsafe) {
-            const { user } = window.Telegram.WebApp.initDataUnsafe;
+        if (window?.Telegram?.WebApp?.initDataUnsafe) {
+            const { user } = window?.Telegram?.WebApp?.initDataUnsafe;
             setUserData(user);
         }
     }, []);
