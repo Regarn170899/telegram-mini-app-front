@@ -5,9 +5,10 @@ function App() {
     const [formData, setFormData] = useState({ name: "", message: "" }); // Данные формы
     const [status, setStatus] = useState(""); // Статус отправки данных
 
+    const tg = window?.Telegram?.WebApp;
+
     // Инициализация Telegram Web App и получение данных пользователя
     useEffect(() => {
-        const tg = window?.Telegram?.WebApp;
         tg?.expand(); // Разворачиваем Web App
         setUser(tg?.initDataUnsafe?.user || null); // Получаем информацию о пользователе
     }, []);
@@ -53,6 +54,7 @@ function App() {
                 Отправить
             </button>
             <h1>Отправить сообщение</h1>
+                <p>{JSON.stringify(tg)}</p>
 
             {user && (
                 <p>
