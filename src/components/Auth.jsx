@@ -12,7 +12,7 @@ const Auth = () => {
             const queryId = tg?.initDataUnsafe?.query_id; // ID запроса
 
             // Отправка данных на сервер для проверки
-            const response = await fetch('https://16qnuw-77-51-47-174.ru.tuna.am/auth/telegram', {
+            const response = await fetch('https://16qnuw-77-51-47-174.ru.tuna.am/auth/user', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
