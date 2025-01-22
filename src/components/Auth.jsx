@@ -5,9 +5,17 @@ const Auth = () => {
         const tg = window?.Telegram?.WebApp;
         let authData
         let queryId
+
+        let userData = {};
         if (tg) {
              authData = tg.initData; // Данные авторизации
-             queryId = tg?.initDataUnsafe?.query_id; // ID запроса
+             queryId = tg?.initDataUnsafe; // ID запроса
+
+            const params = new URLSearchParams(authData);
+
+            for (const [key, value] of params.entries()) {
+                userData[key] = value;
+            }
         }
 
 
@@ -17,7 +25,7 @@ const Auth = () => {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ authData, queryId }),
+            body: JSON.stringify({ userData, queryId }),
         });
             alert(JSON.stringify(response))
 
