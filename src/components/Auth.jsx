@@ -37,8 +37,6 @@ const Auth = () => {
             // Отправка данных в бот
             tg.sendData(JSON.stringify(userData));
 
-            // Закрыть Mini App (опционально)
-            tg.close();
         } else {
             console.error('Telegram WebApp is not available');
         }
