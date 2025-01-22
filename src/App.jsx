@@ -1,18 +1,16 @@
-import React, { useState, useEffect } from "react";
-import {BrowserRouter, Route, Router, Routes} from "react-router-dom";
+import React from "react";
+import { HashRouter, Route, Routes} from "react-router-dom";
 import MainPage from "./components/mainPage.jsx";
 import Auth from "./components/Auth.jsx";
 
 function App() {
     return(
-        <BrowserRouter>
-            <Router>
+        <HashRouter >
                 <Routes>
                     <Route path="/" element={<MainPage/>} />
                     <Route path="/auth" element={<Auth />} />
                 </Routes>
-            </Router>
-        </BrowserRouter>
+        </HashRouter >
     )
 }
 
