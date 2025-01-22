@@ -6,11 +6,12 @@ import Auth from "./components/Auth.jsx";
 function App() {
     return(
         <BrowserRouter>
-
-            <Routes>
-                <Route path="/" element={<MainPage/>} />
-                <Route path="/auth" element={<Auth />} />
-            </Routes>
+            <Router>
+                <Routes>
+                    <Route path="/" element={<MainPage/>} />
+                    <Route path="/auth" element={<Auth />} />
+                </Routes>
+            </Router>
         </BrowserRouter>
     )
 }
