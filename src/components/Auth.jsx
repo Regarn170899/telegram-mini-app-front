@@ -5,8 +5,13 @@ const Auth = () => {
     const [password, setPassword] = useState("");
     const handleAuth = async () => {
         const tg = window?.Telegram?.WebApp;
-        const authData = tg.initData; // Данные авторизации
-        const queryId = tg?.initDataUnsafe?.query_id; // ID запроса
+        let authData
+        let queryId
+        if (tg) {
+             authData = tg.initData; // Данные авторизации
+             queryId = tg?.initDataUnsafe?.query_id; // ID запроса
+        }
+
 
         // Отправка данных на сервер для проверки
         const response = await fetch('https://16qnuw-77-51-47-174.ru.tuna.am/auth/user', {
@@ -16,12 +21,8 @@ const Auth = () => {
             },
             body: JSON.stringify({ authData, queryId }),
         });
+            alert(JSON.stringify(response))
 
-        if (response.ok) {
-            tg?.sendData('Auth successful!'); // Отправить данные в бот
-        } else {
-            alert('Authorization failed.');
-        }
     };
     useEffect(() => {
         console.log(tg);
