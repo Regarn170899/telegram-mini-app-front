@@ -8,7 +8,7 @@ const Auth = () => {
 
         let userData = {};
         if (tg) {
-             authData = tg.initData; // Данные авторизации
+             authData = tg.initData; // Данные а
              queryId = tg?.initDataUnsafe; // ID запроса
 
             const params = new URLSearchParams(authData);
@@ -17,9 +17,6 @@ const Auth = () => {
                 userData[key] = value;
             }
         }
-
-
-        // Отправка данных на сервер для проверки
         const response = await fetch('https://16qnuw-77-51-47-174.ru.tuna.am/auth/user', {
             method: 'POST',
             headers: {
