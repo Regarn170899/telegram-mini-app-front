@@ -17,7 +17,7 @@ const Auth = () => {
                 userData[key] = value;
             }
         }
-        const response = await fetch('https://16qnuw-77-51-47-174.ru.tuna.am/auth/user', {
+        const response = await fetch('https://8mu0y6-95-72-138-197.ru.tuna.am/auth/user', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
